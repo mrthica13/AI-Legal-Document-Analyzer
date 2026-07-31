@@ -1,0 +1,151 @@
+/* Navbar */
+
+.navbar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+
+  padding: 15px 25px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Profile */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.avatar {
+  font-size: 30px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.email {
+  color: #ddd;
+  font-size: 13px;
+}
+
+.arrow {
+  color: white;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* Dropdown */
+
+.profile-dropdown {
+  position: absolute;
+  top: 65px;
+  right: 0;
+
+  width: 260px;
+
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+
+  padding: 18px;
+
+  color: white;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+  z-index: 9999;
+}
+
+.profile-dropdown h4 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.profile-dropdown p {
+  margin: 0;
+  margin-bottom: 15px;
+  color: #ddd;
+  font-size: 14px;
+}
+
+.profile-dropdown hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin: 15px 0;
+}
+
+.dropdown-btn {
+  width: 100%;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.dropdown-btn:hover {
+  background: #dc2626;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .profile-dropdown {
+    right: -20px;
+    width: 230px;
+  }
+
+}
