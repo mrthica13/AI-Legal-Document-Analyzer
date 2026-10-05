@@ -1,0 +1,22 @@
+# Secrets
+.env
+*.env
+backend/.env
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Uploads
+backend/uploads/
+
+# IDE
+.vscode/
+.idea/
