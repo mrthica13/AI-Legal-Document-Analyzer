@@ -11,7 +11,7 @@ email-validator
 passlib[bcrypt]
 python-jose[cryptography]
 
-google-generativeai
+google-genai
 
 pymupdf
 
