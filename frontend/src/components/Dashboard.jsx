@@ -102,7 +102,7 @@ function Dashboard() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/upload",
+        "https://ai-legal-document-analyzer-backend-4654.onrender.com/upload",
         formData
       );
 
