@@ -17,13 +17,13 @@ function Login() {
     }
 
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/login",
-        {
-          email: email,
-          password: password,
-        }
-      );
+  const response = await axios.post(
+    "https://ai-legal-document-analyzer-backend-4654.onrender.com/login",
+    {
+      email: email,
+      password: password,
+    }
+  );
 
       // Save JWT Token
       localStorage.setItem(

@@ -1,11 +1,10 @@
+
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
-import { Link } from "react-router-dom";
 
 function Register() {
-
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
@@ -13,41 +12,37 @@ function Register() {
   const [password, setPassword] = useState("");
 
   const handleRegister = async () => {
-
     if (!username || !email || !password) {
       alert("Please fill all fields");
       return;
     }
 
     try {
-
-      await axios.post(
-           "https://ai-legal-document-analyzer-backend.onrender.com/register",
+      const response = await axios.post(
+        "https://ai-legal-document-analyzer-backend-4654.onrender.com/register",
         {
           username,
           email,
-          password
+          password,
         }
       );
 
       alert("✅ Registration Successful");
-
       navigate("/");
-
     } catch (error) {
+      console.error("Registration Error:", error);
 
-      console.log(error);
+      const message =
+        error.response?.data?.detail ||
+        "Registration Failed. Please try again.";
 
-      alert("❌ Registration Failed");
+      alert("❌ " + message);
     }
   };
 
   return (
-
     <div className="login-container">
-
       <div className="login-card">
-
         <h1>⚖ AI Legal Document Analyzer</h1>
 
         <h2>Register</h2>
@@ -76,25 +71,23 @@ function Register() {
         <button onClick={handleRegister}>
           Register
         </button>
+
         <p style={{ marginTop: "20px", color: "white" }}>
           Already have an account?{" "}
-         <Link
-           to="/"
-           style={{
-           color: "#00e5ff",
-           textDecoration: "none",
-           fontWeight: "bold",
-          }}
-         >
-           Login
-         </Link>
+          <Link
+            to="/"
+            style={{
+              color: "#00e5ff",
+              textDecoration: "none",
+              fontWeight: "bold",
+            }}
+          >
+            Login
+          </Link>
         </p>
       </div>
-
     </div>
-
   );
-
 }
 
 export default Register;
